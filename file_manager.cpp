@@ -1636,6 +1636,11 @@ public:
           printw(" %s ", statusMessage.c_str());
           attroff(COLOR_PAIR(isError ? 8 : 7) | A_BOLD);
         } else {
+          if(!multiSelection.empty()){
+            attron(COLOR_PAIR(9) | A_BOLD); // MULTI color
+            printw(" [%zu selected] ", multiSelection.size());
+            attroff(COLOR_PAIR(9) | A_BOLD);
+          }
           attron(COLOR_PAIR(6) | A_BOLD);
           printw(" Fyzenor ");
           attroff(COLOR_PAIR(6) | A_BOLD);

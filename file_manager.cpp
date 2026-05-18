@@ -46,16 +46,25 @@ namespace fs = std::filesystem;
 
 // Configuration
 const std::set<std::string> VIDEO_EXTS = {".mp4", ".mkv", ".avi", ".mov", ".flv", ".wmv", ".webm"};
-const std::set<std::string> IMAGE_EXTS = {".png", ".jpg",  ".jpeg", ".gif", ".bmp", ".webp", ".svg",  ".tiff"};
+const std::set<std::string> IMAGE_EXTS = {".png", ".jpg",  ".jpeg", ".gif",
+                                          ".bmp", ".webp", ".svg",  ".tiff"};
 
-const std::set<std::string> FRONTEND_EXTS = {".js", ".jsx", ".ts", ".tsx", ".css", ".scss", ".vue", ".html", ".svelte", ".htm", ".astro", ".mjx", ".dart",  ".swift"};
+const std::set<std::string> FRONTEND_EXTS = {".js",    ".jsx", ".ts",   ".tsx",    ".css",
+                                             ".scss",  ".vue", ".html", ".svelte", ".htm",
+                                             ".astro", ".mjx", ".dart", ".swift"};
 const std::set<std::string> SCRIPTS_EXTS = {".sh", ".bash", ".zsh", ".pl", ".awk", ".ps1", ".psm1"};
-const std::set<std::string> CONFIG_EXTS = {".json", ".xml", ".yaml", ".yml", ".toml", ".ini", ".conf", ".env", ".dockerfile", ".properties", ".lock", ".gitignore", ".gitattributes"};
-const std::set<std::string> DOCUMENTATION_EXTS = {".md", ".txt", ".pdf", ".doc", ".docx", ".ppt", ".pptx", ".xls", ".xlsx", ".csv"};
-const std::set<std::string> CORE_EXTS = {".py", ".rb", ".php", ".cpp", ".c", ".hpp", ".h", ".rs", ".java", ".go", ".lua", ".sql", ".cmake", ".make", ".diff", ".patch", ".kt", ".cs", ".scala"};
-const std::set<std::string> FONT_EXTS  = {".woff", ".woff2", ".ttf", ".eot", ".otf"};
+const std::set<std::string> CONFIG_EXTS = {
+    ".json", ".xml",        ".yaml",       ".yml",  ".toml",      ".ini",          ".conf",
+    ".env",  ".dockerfile", ".properties", ".lock", ".gitignore", ".gitattributes"};
+const std::set<std::string> DOCUMENTATION_EXTS = {".md",  ".txt",  ".pdf", ".doc",  ".docx",
+                                                  ".ppt", ".pptx", ".xls", ".xlsx", ".csv"};
+const std::set<std::string> CORE_EXTS = {
+    ".py",  ".rb",  ".php",   ".cpp",  ".c",    ".hpp",   ".h",  ".rs", ".java", ".go",
+    ".lua", ".sql", ".cmake", ".make", ".diff", ".patch", ".kt", ".cs", ".scala"};
+const std::set<std::string> FONT_EXTS = {".woff", ".woff2", ".ttf", ".eot", ".otf"};
 
-const std::set<std::string> AUDIO_EXTS = {".mp3", ".wav", ".flac", ".m4a", ".aac", ".ogg", ".wma", ".opus"};
+const std::set<std::string> AUDIO_EXTS = {".mp3", ".wav", ".flac", ".m4a",
+                                          ".aac", ".ogg", ".wma",  ".opus"};
 const std::set<std::string> ARCHIVE_EXTS = {".zip", ".tar", ".gz", ".7z", ".rar", ".xz", ".bz2"};
 
 const char* ICON_DIR = " ";
@@ -174,11 +183,12 @@ FileStyle getFileStyle(const std::string& ext, bool isDir) {
 }
 
 int getFinalPair(int base, bool isSelected, bool isSecondary) {
-  if (isSelected) return base + 40;
-  if (isSecondary) return base + 80;
+  if (isSelected)
+    return base + 40;
+  if (isSecondary)
+    return base + 80;
   return base;
 }
-
 
 static const std::string base64_chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
                                         "abcdefghijklmnopqrstuvwxyz"
@@ -401,44 +411,44 @@ private:
       setHex(36, colors["SCRIPT"]);
       setHex(37, colors["DOCS"]);
       setHex(38, colors["FONT"]);
-      init_pair(1, 20, -1);  // DIR
-      init_pair(2, 21, -1);  // FILE
-      init_pair(4, 23, -1);  // MEDIA
-      init_pair(5, 24, -1);  // IMAGE
-      init_pair(16, 32, -1); // CORE
-      init_pair(17, 33, -1); // ARCHIVE
-      init_pair(24, 34, -1); // FRONTEND
-      init_pair(25, 35, -1); // CONFIG
-      init_pair(26, 36, -1); // SCRIPT
-      init_pair(27, 37, -1); // DOCS
-      init_pair(28, 38, -1); // FONT
-      init_pair(41, 20, 22); // SEL_DIR
-      init_pair(42, 21, 22); // SEL_FILE
-      init_pair(44, 23, 22); // SEL_MEDIA
-      init_pair(45, 24, 22); // SEL_IMAGE
-      init_pair(56, 32, 22); // SEL_CORE
-      init_pair(57, 33, 22); // SEL_ARCHIVE
-      init_pair(64, 34, 22); // SEL_FRONTEND
-      init_pair(65, 35, 22); // SEL_CONFIG
-      init_pair(66, 36, 22); // SEL_SCRIPT
-      init_pair(67, 37, 22); // SEL_DOCS
-      init_pair(68, 38, 22); // SEL_FONT
-      init_pair(81, 20, 31); // SEC_SEL_DIR
-      init_pair(82, 21, 31); // SEC_SEL_FILE
-      init_pair(84, 23, 31); // SEC_SEL_MEDIA
-      init_pair(85, 24, 31); // SEC_SEL_IMAGE
-      init_pair(96, 32, 31); // SEC_SEL_CORE
-      init_pair(97, 33, 31); // SEC_SEL_ARCHIVE
+      init_pair(1, 20, -1);   // DIR
+      init_pair(2, 21, -1);   // FILE
+      init_pair(4, 23, -1);   // MEDIA
+      init_pair(5, 24, -1);   // IMAGE
+      init_pair(16, 32, -1);  // CORE
+      init_pair(17, 33, -1);  // ARCHIVE
+      init_pair(24, 34, -1);  // FRONTEND
+      init_pair(25, 35, -1);  // CONFIG
+      init_pair(26, 36, -1);  // SCRIPT
+      init_pair(27, 37, -1);  // DOCS
+      init_pair(28, 38, -1);  // FONT
+      init_pair(41, 20, 22);  // SEL_DIR
+      init_pair(42, 21, 22);  // SEL_FILE
+      init_pair(44, 23, 22);  // SEL_MEDIA
+      init_pair(45, 24, 22);  // SEL_IMAGE
+      init_pair(56, 32, 22);  // SEL_CORE
+      init_pair(57, 33, 22);  // SEL_ARCHIVE
+      init_pair(64, 34, 22);  // SEL_FRONTEND
+      init_pair(65, 35, 22);  // SEL_CONFIG
+      init_pair(66, 36, 22);  // SEL_SCRIPT
+      init_pair(67, 37, 22);  // SEL_DOCS
+      init_pair(68, 38, 22);  // SEL_FONT
+      init_pair(81, 20, 31);  // SEC_SEL_DIR
+      init_pair(82, 21, 31);  // SEC_SEL_FILE
+      init_pair(84, 23, 31);  // SEC_SEL_MEDIA
+      init_pair(85, 24, 31);  // SEC_SEL_IMAGE
+      init_pair(96, 32, 31);  // SEC_SEL_CORE
+      init_pair(97, 33, 31);  // SEC_SEL_ARCHIVE
       init_pair(104, 34, 31); // SEC_SEL_FRONTEND
       init_pair(105, 35, 31); // SEC_SEL_CONFIG
       init_pair(106, 36, 31); // SEC_SEL_SCRIPT
       init_pair(107, 37, 31); // SEC_SEL_DOCS
       init_pair(108, 38, 31); // SEC_SEL_FONT
-      init_pair(6, 25, -1);  // BORDER
-      init_pair(7, 26, -1);  // SUCCESS
-      init_pair(8, 27, -1);  // ERROR
-      init_pair(9, 28, -1);  // MULTI
-      init_pair(15, 30, -1); // PIN_BORDER
+      init_pair(6, 25, -1);   // BORDER
+      init_pair(7, 26, -1);   // SUCCESS
+      init_pair(8, 27, -1);   // ERROR
+      init_pair(9, 28, -1);   // MULTI
+      init_pair(15, 30, -1);  // PIN_BORDER
     } else {
       init_pair(1, COLOR_CYAN, -1);
       init_pair(2, COLOR_WHITE, -1);
@@ -609,9 +619,8 @@ public:
   }
 
   bool isCodeFile(const std::string& ext) {
-    return CORE_EXTS.count(ext) || FRONTEND_EXTS.count(ext) || 
-           SCRIPTS_EXTS.count(ext) || CONFIG_EXTS.count(ext) || 
-           DOCUMENTATION_EXTS.count(ext);
+    return CORE_EXTS.count(ext) || FRONTEND_EXTS.count(ext) || SCRIPTS_EXTS.count(ext) ||
+           CONFIG_EXTS.count(ext) || DOCUMENTATION_EXTS.count(ext);
   }
 
   const char* getIcon(const FileEntry& f) {

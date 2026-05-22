@@ -1647,7 +1647,6 @@ void searchByName(){   // This is a recursive search which checks all the subdir
     statusMessage = "Search cancelled, empty search query";
     return;
   }
-
   if (!searchMode) originalFiles = currentFiles;
   presentSearchQuery = originalQuery;
 

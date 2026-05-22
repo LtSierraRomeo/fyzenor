@@ -141,7 +141,7 @@ struct FileEntry {
     name = p.filename().string();
     is_directory = fs::is_directory(p);
     extension = p.extension().string();
-    std::transform(extension.begin(), extension.end(), extension.begin(), ::tolower);
+    extension = toLower(extension);
 
     try {
       if (is_directory) {
@@ -797,7 +797,7 @@ public:
         std::string cachePath = getCachePath(path, targetW, targetH);
 
         std::string ext = fs::path(path).extension().string();
-        std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
+        ext = toLower(ext);
         bool isVid = VIDEO_EXTS.count(ext);
 
         if (!fs::exists(cachePath)) {
@@ -1507,7 +1507,7 @@ public:
             subName = subName.substr(0, maxW - 3) + "...";
 
           std::string ext = entry.path().extension().string();
-          std::transform(ext.begin(), ext.end(), ext.begin(), ::tolower);
+          ext = toLower(ext);
           FileStyle s = getFileStyle(ext, fs::is_directory(entry));
 
           wattron(winPreview, COLOR_PAIR(s.pair));

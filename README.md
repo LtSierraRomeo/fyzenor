@@ -357,6 +357,7 @@ Now run `f` instead of `fyzenor` to jump to the last visited directory after exi
 | `N`             | Create **New Folder**                                |
 | `z`             | **Zip** selected items into an archive               |
 | `c`             | **Copy Absolute Path** to system clipboard           |
+| `f` 			  | **Search** files by Name                             |
 
 ### Selection, View & Pins
 

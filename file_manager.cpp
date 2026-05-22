@@ -1754,7 +1754,7 @@ void searchByName(){   // This is a recursive search which checks all the subdir
             printw(" 󰄾 Nav:j/k Jump:Enter Unpin:d Files:Tab");
           else
             printw(" 󰄾 Space:  y:  x:  p:  d:󱂥  z:  r:  "
-                   "s:  Pins:");
+                   "s:  f:⌕  Pins:");
           attroff(A_DIM);
         }
         refresh();
